@@ -5,7 +5,8 @@
             "cache": false
         },
         "build": {
-            "outputs": [".next/**", "!.next/cache/**"]
+            "dependsOn": ["^build"],
+            "outputs": ["dist/**"]
         },
         "lint": {}
     }

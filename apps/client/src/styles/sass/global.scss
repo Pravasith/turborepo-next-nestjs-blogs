@@ -1,0 +1,88 @@
+@font-face {
+    font-family: "Calibre";
+    src: url("../fonts/Calibre.eot"); /* IE9*/
+    src: 
+		/* chrome、firefox */ url("../fonts/Calibre.woff2") format("woff2"),
+        /* chrome、firefox */ url("../fonts/Calibre.woff") format("woff"),
+        /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+            url("../fonts/Calibre.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Calibre SemiBold";
+    src: url("../fonts/Calibre-SemiBold.eot"); /* IE9*/
+    src:
+		/* chrome、firefox */ url("../fonts/Calibre-SemiBold.woff2")
+            format("woff2"),
+        /* chrome、firefox */ url("../fonts/Calibre-SemiBold.woff")
+            format("woff"),
+        /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+            url("../fonts/Calibre-SemiBold.ttf") format("truetype");
+}
+
+@font-face {
+    font-family: "Calibre Bold";
+    src: url("../fonts/Calibre-Bold.eot"); /* IE9*/
+    src:
+		/* chrome、firefox */ url("../fonts/Calibre-Bold.woff2") format("woff2"),
+        /* chrome、firefox */ url("../fonts/Calibre-Bold.woff") format("woff"),
+        /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+            url("../fonts/Calibre-Bold.ttf") format("truetype");
+}
+
+@import "./vars";
+
+html,
+body {
+    padding: 0;
+    margin: 0;
+    font-family: "Calibre", sans-serif;
+    width: 100%;
+}
+
+* {
+    box-sizing: border-box;
+    // scroll-behavior: smooth;
+    ::-moz-selection {
+        /* Code for Firefox */
+        @apply text-theme-orange bg-theme-yellow;
+    }
+
+    ::selection {
+        @apply text-theme-orange bg-theme-yellow;
+    }
+}
+
+img {
+    // image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    image-rendering: -moz-crisp-edges; /* Firefox */
+    image-rendering: -o-crisp-edges; /* Opera */
+    image-rendering: -webkit-optimize-contrast; /* Webkit (non-standard naming)*/
+    -ms-interpolation-mode: nearest-neighbor; /* IE (non-standard property) */
+}
+
+tspan.curlyTextBold {
+    @apply font-calibre-semibold;
+    font-family: "Noe Display";
+    letter-spacing: 0.1rem;
+}
+
+strong {
+    @apply font-calibre-semibold font-medium;
+}
+
+.masonry-container {
+
+    @apply columns-1 tablet:columns-2;
+
+    -webkit-column-gap: 1rem;
+    -moz-column-gap: 1rem;
+    column-gap: 1rem;
+}
+
+.masonry-item {
+    // display: inline-block;
+    margin-bottom: 1rem;
+    width: 100%;
+}

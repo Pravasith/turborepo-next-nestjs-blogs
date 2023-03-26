@@ -1,7 +1,7 @@
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-import { join } from 'path';
+// import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { BlogsModule } from './blogs/blogs.module';
@@ -14,21 +14,18 @@ import entities from './blogs/entities';
       imports: [ConfigModule],
 
       useFactory: (configService: ConfigService) => ({
-        // logger: 'simple-console',
         type: 'postgres',
         host: configService.get('DB_HOST'),
         port: +configService.get<number>('DB_PORT'),
         username: configService.get('DB_USERNAME'),
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_NAME'),
-        // name: 'challenge',
         ssl: true,
-        // entities,
-        // entities: [__dirname + '/../**/*.entity{.ts,.js}'],
-        entities: [join(__dirname, '**', '*.entity.{ts,js}')],
+        entities,
+        // entities: [join(__dirname, '**', '*.entity.{ts,js}')],
         synchronize: false, // TODO: configure production toggle for this
-        // migrationsTableName: 'blogs',
       }),
+
       inject: [ConfigService],
     }),
     BlogsModule,

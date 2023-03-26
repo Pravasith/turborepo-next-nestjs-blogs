@@ -7,14 +7,9 @@ import { Repository } from 'typeorm';
 export class BlogsService {
   constructor(
     @InjectRepository(Blog) private readonly blogRepository: Repository<Blog>,
-  ) {
-    console.log(blogRepository);
-  }
+  ) {}
 
   findAll() {
-    // return `This action returns all blogs`;
-    // return this.blogRepository.find();
-
     return this.blogRepository.find();
   }
 

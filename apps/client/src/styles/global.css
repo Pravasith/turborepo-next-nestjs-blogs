@@ -1,0 +1,124 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url("https://fonts.cdnfonts.com/css/noe-display");
+
+@layer utilities {
+    /* CENTER CHILDREN IN A ROW */
+    .flex-row-center {
+        @apply flex flex-row justify-center items-center;
+    }
+
+    /* ALIGN CHILDREN TO THE NORTH IN A ROW */
+    .flex-row-north {
+        @apply flex flex-row justify-center items-start;
+    }
+
+    /* ALIGN CHILDREN TO THE EAST IN A ROW */
+    .flex-row-east {
+        @apply flex flex-row items-center justify-end;
+    }
+
+    /* ALIGN CHILDREN TO THE SOUTH IN A ROW */
+    .flex-row-south {
+        @apply flex flex-row justify-center items-end;
+    }
+
+    /* ALIGN CHILDREN TO THE WEST IN A ROW */
+    .flex-row-west {
+        @apply flex flex-row items-center justify-start;
+    }
+
+    /* ALIGN CHILDREN TO THE NORTH-EAST CORNER IN A ROW */
+    .flex-row-north-east {
+        @apply flex flex-row items-start justify-end;
+    }
+
+    /* ALIGN CHILDREN TO THE NORTH-WEST CORNER IN A ROW */
+    .flex-row-north-west {
+        @apply flex flex-row justify-start items-start;
+    }
+
+    /* ALIGN CHILDREN TO THE SOUTH-EAST CORNER IN A ROW */
+    .flex-row-south-east {
+        @apply flex flex-row items-end justify-end;
+    }
+
+    /* ALIGN CHILDREN TO THE SOUTH-WEST CORNER IN A ROW */
+    .flex-row-south-west {
+        @apply flex flex-row items-end justify-start;
+    }
+
+    /* CENTER CHILDREN IN A COLUMN */
+    .flex-col-center {
+        @apply flex flex-col justify-center items-center;
+    }
+
+    /* ALIGN CHILDREN TO THE NORTH IN A COLUMN */
+    .flex-col-north {
+        @apply flex flex-col items-center justify-start;
+    }
+
+    /* ALIGN CHILDREN TO THE EAST IN A COLUMN */
+    .flex-col-east {
+        @apply flex flex-col justify-center items-end;
+    }
+
+    /* ALIGN CHILDREN TO THE SOUTH IN A COLUMN */
+    .flex-col-south {
+        @apply flex flex-col items-center justify-end;
+    }
+
+    /* ALIGN CHILDREN TO THE WEST IN A COLUMN */
+    .flex-col-west {
+        @apply flex flex-col justify-center items-start;
+    }
+
+    /* ALIGN CHILDREN TO THE NORTH-EAST CORNER IN A COLUMN */
+    .flex-col-north-east {
+        @apply flex flex-col justify-start items-end;
+    }
+
+    /* ALIGN CHILDREN TO THE SOUTH-EAST CORNER IN A COLUMN */
+    .flex-col-south-east {
+        @apply flex flex-col justify-end items-end;
+    }
+
+    /* ALIGN CHILDREN TO THE SOUTH-WEST CORNER IN A COLUMN */
+    .flex-col-south-west {
+        @apply flex flex-col justify-end items-start;
+    }
+
+    /* ALIGN CHILDREN TO THE NORTH-WEST CORNER IN A COLUMN */
+    .flex-col-north-west {
+        @apply flex flex-col justify-start items-start;
+    }
+}
+
+@layer base {
+    h1 {
+        @apply font-calibre-bold font-noe-display decoration-2 
+        text-[2.5rem] leading-[2.75rem]
+
+        tablet:text-[3.5rem] tablet:leading-[3.5rem]
+        desktop:text-[3.25rem] desktop:leading-[3.25rem]
+        true-hd:text-[3.75rem] true-hd:leading-[3.75rem]
+        tv:text-[4.75rem] tv:leading-[4.5rem];
+
+        font-family: "Noe Display";
+    }
+
+    h3 {
+        @apply font-calibre-bold underline-offset-2
+        text-3xl;
+    }
+
+    p,
+    li {
+        @apply font-calibre text-base leading-5 py-1
+        desktop:text-lg desktop:leading-6
+        true-hd:text-xl true-hd:leading-6
+        tv:text-2xl tv:leading-7;
+    }
+}

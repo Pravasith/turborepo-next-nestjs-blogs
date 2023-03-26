@@ -33,3 +33,9 @@ export enum ETextColorClassNames {
     DARK_THEME_TEXT_100 = "text-dark-theme-text-100",
     DARK_THEME_TEXT_200 = "text-dark-theme-text-200",
 }
+
+export enum ETextAlign {
+    LEFT = "text-left",
+    RIGHT = "text-right",
+    CENTER = "text-center",
+}

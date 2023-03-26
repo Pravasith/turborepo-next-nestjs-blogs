@@ -1,8 +1,4 @@
-import React, { useEffect, useReducer, useRef } from "react"
-
-import gsap from "gsap"
-
-import MenuBar from "@components/Layout/MenuBar"
+import React from "react"
 
 import { EColorClassNames, EColors } from "@lib/themes/interface"
 

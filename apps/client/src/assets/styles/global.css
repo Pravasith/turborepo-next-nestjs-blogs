@@ -109,8 +109,8 @@
         font-family: "Noe Display";
     }
 
-    h3 {
-        @apply font-calibre-bold underline-offset-2
+    h2 {
+        @apply font-calibre-semibold underline-offset-2
         text-3xl;
     }
 

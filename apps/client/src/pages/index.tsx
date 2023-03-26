@@ -9,7 +9,7 @@ const IndexPage: NextPage<IndexPageProps> = () => {
     return (
         <main>
             {/* <Meta {...metaData} /> */}
-            <Layout>{"HELLO World"}</Layout>
+            <Layout>{"HELLO"}</Layout>
         </main>
     )
 }

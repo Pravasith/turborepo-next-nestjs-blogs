@@ -39,9 +39,9 @@ module.exports = {
 
             fontFamily: {
                 calibre: "Calibre",
-                "calibre-bold": "Calibre Bold",
+                "calibre-bold": "Calibre-Bold",
                 "calibre-semibold": "Calibre SemiBold",
-                'noe-display': 'noe-display'
+                "noe-display": "noe-display",
             },
 
             spacing: {
@@ -72,13 +72,13 @@ module.exports = {
             },
 
             screens: {
-                'mobile'  : '375px',
-                'tablet'  : '744px',
-                'laptop'  : '1024px',
-                'desktop' : '1280px',
-                'full-hd' : '1536px',
-                'true-hd' : '1920px',
-                'tv'      : '2560px'
+                mobile: "375px",
+                tablet: "744px",
+                laptop: "1024px",
+                desktop: "1280px",
+                "full-hd": "1536px",
+                "true-hd": "1920px",
+                tv: "2560px",
             },
         },
     },

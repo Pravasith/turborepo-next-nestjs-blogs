@@ -27,8 +27,8 @@
       "@pages/*": [
         "pages/*"
       ],
-      "@styles/*": [
-        "styles/*"
+      "@assets/*": [
+        "assets/*"
       ],
       "@hooks/*": [
         "utils/hooks/*"
@@ -38,12 +38,6 @@
       ],
       "@ui/*": [
         "components/UI/*"
-      ],
-      "@svgs/*": [
-        "components/SVGs/*"
-      ],
-      "@models/*": [
-        "components/Models/*"
       ],
       "@utils/*": [
         "utils/*"

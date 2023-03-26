@@ -1,0 +1,21 @@
+I need to connect to a remote postgres database with the following credentials:
+
+DB_HOST='challenge.postgres.database.azure.com'
+DB_PORT=5432
+DB_USERNAME='userchallenge@code-challenge'
+DB_PASSWORD='challenge'
+DB_NAME='challenge'
+
+The database contains a table called 'blogs'. I need a single get route that gets all the data in the table.
+The table structure is as follows:
+
+| Column           |  Type  |                   Explanation |
+| ---------------- | :----: | ----------------------------: |
+| id               | number |            Unique database id |
+| title            | string |                    Blog Title |    
+| slug             | string |            Unique string slug |       
+| content          | string |        The blogs html content |
+| image            | string |          The blogs main image |
+| published_at     |  date  |   When the blog was published | (nullable)
+
+I need to do this in nestJS using TypeORM, can you help me with the steps?

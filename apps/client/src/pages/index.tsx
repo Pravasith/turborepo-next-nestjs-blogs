@@ -2,7 +2,6 @@ import type { GetStaticProps, NextPage } from "next"
 
 import Meta from "@components/Meta"
 import Layout from "@components/Layout"
-// import { metaData } from "@utils/constants"
 
 interface IndexPageProps {}
 
@@ -10,9 +9,7 @@ const IndexPage: NextPage<IndexPageProps> = () => {
     return (
         <main>
             {/* <Meta {...metaData} /> */}
-            <Layout>
-                <h1>HELLO</h1>
-            </Layout>
+            <Layout>{"HELLO World"}</Layout>
         </main>
     )
 }

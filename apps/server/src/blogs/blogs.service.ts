@@ -1,4 +1,4 @@
-import { Blog } from './../entities/blog.entity';
+import { Blog } from './blog.entity';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository } from 'typeorm';

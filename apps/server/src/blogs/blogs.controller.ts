@@ -1,4 +1,4 @@
-import { BlogsService } from './../services/blogs.service';
+import { BlogsService } from './blogs.service';
 import { Controller, Get, Param } from '@nestjs/common';
 
 @Controller('blogs')

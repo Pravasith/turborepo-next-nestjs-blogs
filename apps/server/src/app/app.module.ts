@@ -1,11 +1,10 @@
+import { BlogsModule } from './../blogs/blogs.module';
 import { Module } from '@nestjs/common';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { TypeOrmModule } from '@nestjs/typeorm';
-// import { join } from 'path';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { BlogsModule } from './blogs/blogs.module';
-import entities from './blogs/entities';
+import { Blog } from './../blogs/blog.entity';
 
 @Module({
   imports: [
@@ -21,8 +20,7 @@ import entities from './blogs/entities';
         password: configService.get('DB_PASSWORD'),
         database: configService.get('DB_NAME'),
         ssl: true,
-        entities,
-        // entities: [join(__dirname, '**', '*.entity.{ts,js}')],
+        entities: [Blog],
         synchronize: false, // TODO: configure production toggle for this
       }),
 

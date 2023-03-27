@@ -9,11 +9,20 @@ export class BlogsService {
     @InjectRepository(Blog) private readonly blogRepository: Repository<Blog>,
   ) {}
 
-  findAll() {
-    return this.blogRepository.find();
+  totalBlogCount(): Promise<number> {
+    return this.blogRepository.count();
   }
 
-  findOne(id: number) {
-    return `This action returns a #${id} blog`;
+  findByPage(page: number) {
+    return this.blogRepository.find({
+      take: 6,
+      skip: (page - 1) * 6,
+    });
+  }
+
+  findOneById(id: number) {
+    return this.blogRepository.findOneBy({
+      id,
+    });
   }
 }

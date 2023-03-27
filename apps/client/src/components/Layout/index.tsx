@@ -2,6 +2,7 @@ import React from "react"
 
 import { EColorClassNames, EColors } from "@lib/themes/interface"
 import Header from "./Header"
+import { Divider } from "@mui/material"
 
 interface LayoutProps {
     children: React.ReactNode
@@ -16,6 +17,7 @@ const Layout: React.FC<LayoutProps> = (props: LayoutProps) => {
             `}
         >
             <Header />
+            <Divider />
             {props.children}
         </div>
     )

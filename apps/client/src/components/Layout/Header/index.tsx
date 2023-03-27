@@ -1,11 +1,13 @@
 import { Logo } from "@assets/svgs/Layout"
 import Link from "next/link"
 
-interface HeaderProps {}
-
-const Header = (props: HeaderProps) => {
+const Header = () => {
     return (
-        <header>
+        <header
+            className={`
+                w-full flex-row-center
+            `}
+        >
             <div
                 className={`
                     w-32 mx-10 my-5

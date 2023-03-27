@@ -9,6 +9,7 @@ export interface ImageBlockType {
     caption?: string
     showCaption?: boolean
     hyperlink?: string
+    className?: string
 }
 
 export interface ImageBlockProps {

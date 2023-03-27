@@ -14,9 +14,26 @@ interface IndexPageProps {
 }
 
 const IndexPage: NextPage<IndexPageProps> = ({ blogs, count }) => {
+    // Hardcoded, but it can come through a DB
+    const metaData = {
+        pageTitle: "Vivid Theory Blogs",
+        ogSiteName: "vividtheory.com",
+        ogTitle: "Vivid Theory Blogs",
+        ogType: "website",
+        ogUrl: "https://vividtheory.com/",
+        twitterCreator: "@vividtheory",
+        description: "Vivid Theory Blogs",
+        twitterDescription: "Vivid Theory Blogs",
+        ogDescription: "Vivid Theory Blogs",
+        ogImageAlt: "Vivid Theory Blogs",
+        twitterImageAlt: "Vivid Theory Blogs",
+        ogImage: "",
+        twitterImage: "",
+    }
+
     return (
         <main>
-            {/* <Meta {...metaData} /> */}
+            <Meta {...metaData} />
             <Layout>
                 <Home blogs={blogs} count={count} />
             </Layout>
@@ -38,6 +55,7 @@ export const getStaticProps: GetStaticProps = async () => {
             count = blogCount
         })
         .catch(err => {
+            // TODO: Add toast messages
             console.log(err)
         })
 

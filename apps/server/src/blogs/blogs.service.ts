@@ -1,7 +1,7 @@
 import { Blog } from './blog.entity';
 import { Injectable } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
-import { Repository } from 'typeorm';
+import { IsNull, Not, Repository } from 'typeorm';
 
 @Injectable()
 export class BlogsService {
@@ -19,6 +19,9 @@ export class BlogsService {
       skip: (page - 1) * 6,
       order: {
         published_at: 'DESC',
+      },
+      where: {
+        published_at: Not(IsNull()),
       },
     });
   }

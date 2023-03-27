@@ -9,6 +9,12 @@ const nextConfig = {
             },
         ]
     },
+    images: {
+        domains: [
+            "vividtheory.blob.core.windows.net",
+        ],
+    },
+
 }
 
 module.exports = nextConfig

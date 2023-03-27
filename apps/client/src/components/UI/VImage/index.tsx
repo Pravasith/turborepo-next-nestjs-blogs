@@ -1,7 +1,7 @@
 import Image from "next/image"
 import { ImageBlockProps } from "./interface"
 
-const ImageBlock = (props: ImageBlockProps) => {
+const ZImage = (props: ImageBlockProps) => {
     return (
         <div className={`flex-col-center ${props.className}`}>
             <div className="relative text-[0]">
@@ -22,4 +22,4 @@ const ImageBlock = (props: ImageBlockProps) => {
     )
 }
 
-export default ImageBlock
+export default ZImage

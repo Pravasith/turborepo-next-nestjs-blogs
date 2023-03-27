@@ -6,7 +6,7 @@ export const BlogPattern = z.object({
     slug: z.string(),
     content: z.string(),
     image: z.string(),
-    published_at: z.string().nullable(),
+    published_at: z.string(),
 })
 
 export type BlogType = z.infer<typeof BlogPattern>

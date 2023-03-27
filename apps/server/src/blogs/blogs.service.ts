@@ -17,6 +17,9 @@ export class BlogsService {
     return this.blogRepository.find({
       take: 6,
       skip: (page - 1) * 6,
+      order: {
+        published_at: 'DESC',
+      },
     });
   }
 

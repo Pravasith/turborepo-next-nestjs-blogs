@@ -1,4 +1,10 @@
-const Home = () => {
+import { useEffect } from "react"
+import { HomeProps } from "./interface"
+
+const Home = (props: HomeProps) => {
+    useEffect(() => {
+        console.log(props)
+    }, [])
     return (
         <div
             className={`

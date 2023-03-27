@@ -3,13 +3,14 @@ import VTypography from "@ui/VTypography"
 import VImage from "@ui/VImage"
 import { TypographyVariants } from "@ui/VTypography/interface"
 import { momentFormat } from "@utils/index"
+import Link from "next/link"
 
 interface VCardProps {
     title: string
     description: string
     publishedDate: string
     image: string
-    link?: string
+    link: string
     className?: string
 }
 
@@ -27,29 +28,35 @@ const VCard = ({
                 ${className}
             `}
         >
-            <Card
-                className={`
-                    shadow-xl rounded-2xl
-                    p-5
-                `}
-            >
-                <VTypography type={TypographyVariants.H2}>{title}</VTypography>
+            <Link href={link}>
+                <Card
+                    className={`
+                        shadow-xl rounded-2xl
+                        p-5
+                        border-4 border-white
+                        hover:border-black
+                        transition
+                    `}
+                >
+                    <VImage
+                        className="mb-2  rounded-lg overflow-clip"
+                        imageBlock={{
+                            className: `rounded-lg`,
+                            src: image,
+                            alt: "Image thumbnail for " + title,
+                        }}
+                    />
+                    <VTypography type={TypographyVariants.H2}>
+                        {title}
+                    </VTypography>
 
-                <VImage
-                    className="my-2 rounded-md overflow-clip"
-                    imageBlock={{
-                        className: `rounded-lg`,
-                        src: image,
-                        alt: "Image thumbnail for " + title,
-                    }}
-                />
+                    <Divider className="m-2" />
 
-                <Divider className="m-2" />
-
-                <VTypography className={`my-2`}>
-                    {momentFormat(publishedDate)}
-                </VTypography>
-            </Card>
+                    <VTypography className={`my-2`}>
+                        {momentFormat(publishedDate)}
+                    </VTypography>
+                </Card>
+            </Link>
         </div>
     )
 }

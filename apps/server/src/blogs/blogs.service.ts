@@ -26,9 +26,9 @@ export class BlogsService {
     });
   }
 
-  findOneById(id: number) {
+  findOneBySlug(slug: string) {
     return this.blogRepository.findOneBy({
-      id,
+      slug,
     });
   }
 }

@@ -2,6 +2,10 @@ import type { GetStaticPaths, GetStaticProps, NextPage } from "next"
 
 import Meta from "@components/Meta"
 import Layout from "@components/Layout"
+import BlogDetails from "@components/Pages/BlogDetails"
+import api from "@services/api"
+import { API_URLS } from "@services/routes"
+import { BlogType } from "@lib/api/interface"
 
 // import { metaData } from "@utils/constants"
 // import BlogDetails from "@components/Pages/BlogDetails"
@@ -13,49 +17,42 @@ import Layout from "@components/Layout"
 // import { BASE_URLS } from "@services/routes"
 
 interface BlogProps {
-    // blogData: BlogsType
-    // textGroup: TextGroupType
-    // mediaGroup: MediaGroupType
-    id?: string
+    blog?: BlogType
 }
 
-const Blog: NextPage<BlogProps> = ({ id }) => {
-    // const blogMetaData = blogData.metaData ?? metaData
-
+const Blog: NextPage<BlogProps> = ({ blog }) => {
     return (
         <main>
             {/* <Meta {...blogMetaData} /> */}
-            <Layout>{id}</Layout>
+            <Layout>
+                <BlogDetails blog={blog} />
+            </Layout>
         </main>
     )
 }
 
 export const getStaticProps: GetStaticProps = async ({ params }) => {
-    // const blogData: BlogsType[] = [],
-    //     textGroup: TextGroupType[] = [],
-    //     mediaGroup: MediaGroupType[] = []
+    let blog: BlogType | null = null
 
-    // await Promise.all([
-    //     api.GET<BlogsType[]>(BASE_URLS.BLOG + "?page=" + params?.id),
-    //     api.GET<TextGroupType[]>(BASE_URLS.TEXT_GROUPS + "?page=" + params?.id),
-    //     api.GET<MediaGroupType[]>(
-    //         BASE_URLS.MEDIA_GROUPS + "?page=" + params?.id
-    //     ),
-    // ])
-    //     .then(([blogs, textBlocks, mediaBlocks]) => {
-    //         blogData.push(...blogs)
-    //         textGroup.push(...textBlocks)
-    //         mediaGroup.push(...mediaBlocks)
-    //     })
-    //     .catch(err => console.error(err))
-    console.log(params?.id)
+    console.log(params)
+
+    await api
+        .GET<BlogType>(API_URLS.GET_BLOG_BY_SLUG + params?.id)
+        .then(blogData => {
+            blog = blogData
+        })
+        .catch(err => {
+            // TODO: Add toast messages
+            console.log(err)
+        })
 
     return {
         props: {
             // blogData: blogData[0],
             // textGroup: textGroup[0],
             // mediaGroup: mediaGroup[0],
-            id: params?.id,
+
+            blog,
         },
     }
 }

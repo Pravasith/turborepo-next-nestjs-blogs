@@ -1,3 +1,4 @@
+import { BlogType } from "@lib/api/interface"
 import moment from "moment"
 
 export const momentFormat = (time: string) => {
@@ -14,4 +15,18 @@ export const momentFormat = (time: string) => {
     }
 
     return timeAgo
+}
+
+export const orderBlogsForMasonryView = (blogs: BlogType[]) => {
+    const result: BlogType[] = []
+
+    for (let i = 0; i < blogs.length; i++) {
+        if (i % 2 === 0) result.push(blogs[i])
+    }
+
+    for (let i = 0; i < blogs.length; i++) {
+        if (i % 2 !== 0) result.push(blogs[i])
+    }
+
+    return result
 }

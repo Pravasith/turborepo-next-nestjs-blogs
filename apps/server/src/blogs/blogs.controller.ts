@@ -27,10 +27,10 @@ export class BlogsController {
     }
   }
 
-  @Get(':id')
-  findOneById(@Param('id', ParseIntPipe) id: number) {
+  @Get(':slug')
+  findOneBySlug(@Param('slug') slug: string) {
     try {
-      return this.blogsService.findOneById(id);
+      return this.blogsService.findOneBySlug(slug);
     } catch (error) {
       // TODO: Add custom errors
       return error;

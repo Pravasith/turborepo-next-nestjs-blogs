@@ -1,4 +1,4 @@
-import { Card, Divider } from "@mui/material"
+import { Card, Divider, Skeleton } from "@mui/material"
 import VTypography from "@ui/VTypography"
 import VImage from "@ui/VImage"
 import { TypographyVariants } from "@ui/VTypography/interface"
@@ -13,6 +13,7 @@ interface VCardProps {
     image: string
     link: string
     className?: string
+    isLoading: boolean
 }
 
 const VCard = ({
@@ -22,6 +23,7 @@ const VCard = ({
     image,
     link,
     className,
+    isLoading,
 }: VCardProps) => {
     return (
         <div
@@ -32,24 +34,34 @@ const VCard = ({
         >
             <Link href={link}>
                 <Card className={styles.card}>
-                    <VImage
-                        className="mb-2  rounded-lg overflow-clip"
-                        fitToContainer
-                        imageBlock={{
-                            className: `rounded-lg`,
-                            src: image,
-                            alt: "Image thumbnail for " + title,
-                        }}
-                    />
-                    <VTypography type={TypographyVariants.H2}>
-                        {title}
-                    </VTypography>
+                    {isLoading ? (
+                        <div className="w-[20rem]">
+                            <Skeleton width={"100%"} height={"2.5rem"} />
+                            <Skeleton width={"100%"} height={"2.5rem"} />
+                            <Skeleton width={"100%"} height={"10rem"} />
+                        </div>
+                    ) : (
+                        <>
+                            <VImage
+                                className="mb-2  rounded-lg overflow-clip"
+                                fitToContainer
+                                imageBlock={{
+                                    className: `rounded-lg`,
+                                    src: image,
+                                    alt: "Image thumbnail for " + title,
+                                }}
+                            />
+                            <VTypography type={TypographyVariants.H2}>
+                                {title}
+                            </VTypography>
 
-                    <Divider className={styles.divider} />
+                            <Divider className={styles.divider} />
 
-                    <VTypography className={`my-2`}>
-                        {momentFormat(publishedDate)}
-                    </VTypography>
+                            <VTypography className={`my-2`}>
+                                {momentFormat(publishedDate)}
+                            </VTypography>
+                        </>
+                    )}
                 </Card>
             </Link>
         </div>

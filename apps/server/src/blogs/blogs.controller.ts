@@ -36,4 +36,16 @@ export class BlogsController {
       return error;
     }
   }
+
+  // Only using this for getStaticPaths to cache in a CDN
+  // so it loads faster
+  @Get('/all')
+  findAll() {
+    try {
+      return this.blogsService.findAll();
+    } catch (error) {
+      // TODO: Add custom errors
+      return error;
+    }
+  }
 }

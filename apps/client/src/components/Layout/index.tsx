@@ -13,6 +13,7 @@ const Layout: React.FC<LayoutProps> = (props: LayoutProps) => {
         <div
             className={`
                 absolute z-10 w-full
+                min-h-screen
                 ${EColorClassNames.LIGHT_THEME_BACKGROUND_100}
             `}
         >

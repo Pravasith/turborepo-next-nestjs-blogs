@@ -31,4 +31,12 @@ export class BlogsService {
       slug,
     });
   }
+
+  findAll() {
+    return this.blogRepository.find({
+      where: {
+        published_at: Not(IsNull()),
+      },
+    });
+  }
 }

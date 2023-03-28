@@ -1,5 +1,6 @@
 import VCard from "@components/UI/VCard"
 import VPagination from "@components/UI/VPagination"
+import Alert from "@mui/material/Alert"
 import { BlogType } from "@lib/api/interface"
 
 import api from "@services/api"
@@ -11,6 +12,7 @@ const Home = ({ blogs, count }: HomeProps) => {
     const [currentBlogs, setCurrentBlogs] = useState<BlogType[]>(blogs)
     const [currentPage, setCurrentPage] = useState<number>(1)
     const [loading, setLoading] = useState<boolean>(false)
+    const [errorOccured, setErrorOccured] = useState<boolean>(false)
 
     const onPageChange = (_event: ChangeEvent<unknown>, page: number) => {
         if (page === currentPage) return
@@ -22,7 +24,7 @@ const Home = ({ blogs, count }: HomeProps) => {
                 setCurrentPage(page)
             })
             .catch(err => {
-                // TODO: Add toast message
+                setErrorOccured(true)
                 console.error(err)
             })
             .finally(() => {
@@ -35,9 +37,14 @@ const Home = ({ blogs, count }: HomeProps) => {
             className={`
                 flex-col-center
                 my-10
-                
             `}
         >
+            {errorOccured && (
+                <Alert variant="outlined" severity="error">
+                    Error: Could not load blogs :(
+                </Alert>
+            )}
+
             <VPagination
                 pagesCount={count}
                 numberOfItemsToShow={6}

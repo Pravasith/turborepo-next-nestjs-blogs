@@ -8,6 +8,8 @@
     "private": true,
     "scripts": {
         "dev": "turbo run dev",
-        "build": "turbo run build"
+        "build": "turbo run build --filter=server && turbo run build --filter=client",
+        "start:server": "turbo run start --filter=server",
+        "start:client": "turbo run start --filter=client"
     }
 }

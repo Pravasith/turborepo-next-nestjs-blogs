@@ -1,4 +1,4 @@
-.blogContainer {
+.typographyClasses {
     h1 {
         @apply font-calibre-bold font-noe-display decoration-2 
         text-[2.5rem] leading-[2.75rem]
@@ -17,20 +17,10 @@
     }
 
     p,
-    li,
-    a {
+    li {
         @apply font-calibre text-base leading-5 py-1
         desktop:text-lg desktop:leading-6
         true-hd:text-xl true-hd:leading-6
         tv:text-2xl tv:leading-7;
-    }
-
-    a {
-        @apply underline font-calibre-semibold 
-        hover:text-blue-600;
-    }
-
-    :nth-child(n) {
-        @apply mt-5;
     }
 }

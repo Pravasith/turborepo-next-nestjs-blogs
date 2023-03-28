@@ -4,6 +4,7 @@ import VImage from "@ui/VImage"
 import { TypographyVariants } from "@ui/VTypography/interface"
 import { momentFormat } from "@utils/index"
 import Link from "next/link"
+import styles from "./index.module.scss"
 
 interface VCardProps {
     title: string
@@ -25,19 +26,12 @@ const VCard = ({
     return (
         <div
             className={`
+                ${styles.vCardContainer}
                 ${className}
             `}
         >
             <Link href={link}>
-                <Card
-                    className={`
-                        shadow-xl rounded-2xl
-                        p-5
-                        border-4 border-white
-                        hover:border-black
-                        transition
-                    `}
-                >
+                <Card className={styles.card}>
                     <VImage
                         className="mb-2  rounded-lg overflow-clip"
                         fitToContainer
@@ -51,7 +45,7 @@ const VCard = ({
                         {title}
                     </VTypography>
 
-                    <Divider className="m-2" />
+                    <Divider className={styles.divider} />
 
                     <VTypography className={`my-2`}>
                         {momentFormat(publishedDate)}

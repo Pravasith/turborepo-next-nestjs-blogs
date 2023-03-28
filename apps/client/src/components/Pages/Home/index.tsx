@@ -4,7 +4,6 @@ import { BlogType } from "@lib/api/interface"
 
 import api from "@services/api"
 import { API_URLS } from "@services/routes"
-import { orderBlogsForMasonryView } from "@utils/index"
 import { ChangeEvent, useState } from "react"
 import { HomeProps } from "./interface"
 

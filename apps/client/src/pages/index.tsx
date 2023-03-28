@@ -7,7 +7,6 @@ import api from "@services/api"
 import { API_URLS } from "@services/routes"
 import { z } from "zod"
 import { BlogPattern, BlogType } from "@lib/api/interface"
-import { orderBlogsForMasonryView } from "@utils/index"
 
 interface IndexPageProps {
     blogs: BlogType[]

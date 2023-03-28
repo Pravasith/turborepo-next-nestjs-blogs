@@ -2,8 +2,15 @@
 
 ## Node Version:
 
+-   I used Node v19.5.0, but it should probably run on any 16+ node version
+
+## Yarn:
+
+-   Since I used Turborepo, it uses yarn workspaces so it's better to use yarn.
+-   Install yarn with the following command if you don't have it
+
 ```
-- I used Node v19.5.0, but it should probably run on any 16+ node version
+$ npm install --global yarn
 ```
 
 ## Clone Repo: Clone the repository or download the zip file and extract
@@ -23,13 +30,7 @@ $ cd vividtheory-blogs
 $ yarn install
 ```
 
-or
-
-```
-$ npm install
-```
-
-### Step 2: Copy the .env file (uploaded)
+### Step 2: Copy the .env file (attached in the email, assignment upload)
 
 -   Copy the .env file into the following location
 
@@ -50,14 +51,8 @@ apps/server
 $ yarn start:server
 ```
 
-or
-
-```
-$ npm start:server
-```
-
 -   The backend now runs on http://localhost:8000/
--   Before you run the frontend, please open a new terminal
+-   Before you run the frontend, please open a new terminal and wait for the server to start
 
 ### Step 4: Start Frontend server in a new Terminal
 
@@ -70,12 +65,6 @@ $ npm start:server
 
 ```
 $ yarn start:client
-```
-
-or
-
-```
-$ npm start:client
 ```
 
 ### Step 5: View the app on a Web browser (Runs best on Chrome)
@@ -91,16 +80,10 @@ $ npm start:client
 
 ### Step 2: Run development server command
 
--   Navigate to root directory and run one of the commands:
+-   Navigate to root directory and run:
 
 ```
 $ yarn dev
-```
-
-or
-
-```
-$ npm run dev
 ```
 
 ### Step 3: View the app on a Web browser (Runs best on Chrome)

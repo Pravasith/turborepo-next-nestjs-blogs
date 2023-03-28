@@ -1,6 +1,6 @@
 export const BASE_URL =
     process.env.NODE_ENV === "production"
-        ? "TODO: Add prod URL after deploy"
+        ? "http://localhost:8000/"
         : "http://localhost:8000/"
 
 export const BASE_URL_API = BASE_URL + "api"

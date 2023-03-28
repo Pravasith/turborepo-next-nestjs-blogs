@@ -4,6 +4,7 @@ import { BlogType } from "@lib/api/interface"
 
 import api from "@services/api"
 import { API_URLS } from "@services/routes"
+import { orderBlogsForMasonryView } from "@utils/index"
 import { ChangeEvent, useState } from "react"
 import { HomeProps } from "./interface"
 
@@ -46,11 +47,16 @@ const Home = ({ blogs, count }: HomeProps) => {
 
             <div
                 className={`
-                    grid grid-cols-3
-                    gap-4
+                    grid grid-cols-1
+                    gap-3
+                    
                     my-10
                     max-w-[1280px]
                     px-5
+
+                    tablet:grid-cols-2
+
+                    laptop:grid-cols-3
                 `}
             >
                 {currentBlogs.map((blog, i) => {

@@ -34,8 +34,6 @@ const Blog: NextPage<BlogProps> = ({ blog }) => {
 export const getStaticProps: GetStaticProps = async ({ params }) => {
     let blog: BlogType | null = null
 
-    console.log(params)
-
     await api
         .GET<BlogType>(API_URLS.GET_BLOG_BY_SLUG + params?.id)
         .then(blogData => {

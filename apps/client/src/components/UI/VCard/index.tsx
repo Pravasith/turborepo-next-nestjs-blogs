@@ -40,6 +40,7 @@ const VCard = ({
                 >
                     <VImage
                         className="mb-2  rounded-lg overflow-clip"
+                        fitToContainer
                         imageBlock={{
                             className: `rounded-lg`,
                             src: image,

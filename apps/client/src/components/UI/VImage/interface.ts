@@ -18,4 +18,5 @@ export interface ImageBlockProps {
     link?: string
     alignCaptionText?: ETextAlign
     textClassName?: string
+    fitToContainer?: boolean
 }

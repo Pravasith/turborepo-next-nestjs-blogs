@@ -56,7 +56,7 @@ $ yarn start:server
 
 ### Step 4: Start Frontend server in a new Terminal
 
-#### Please ensure that you opened a new terminal to run the nest command
+#### Please ensure that you opened a new terminal to run the next command
 
 #### !!! Important: You must start the Backend server first before starting frontend server
 
